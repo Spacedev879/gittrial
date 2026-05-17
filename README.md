@@ -1,9 +1,14 @@
-# gittrial
+# GitTrial
 
-For GitTrial you will need Git/Homebrew and terminal
+For GitTrial you will need:
+- Git
+- Homebrew (for macOS)
+- Terminal
 
-Link for Homebrew
-https://brew.sh/
+## Requirements
 
-Link for Git
+### Git
 https://git-scm.com/
+
+### Homebrew (macOS only)
+https://brew.sh/
