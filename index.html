@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GitTrial</title>
+
+<style>
+:root {
+  --bg:#f5f5f5;
+  --text:#111;
+  --card:#ffffff;
+  --border:#d0d0d0;
+  --code:#eeeeee;
+}
+
+body.dark {
+  --bg:#0f0f0f;
+  --text:#f2f2f2;
+  --card:#161616;
+  --border:#2a2a2a;
+  --code:#1c1c1c;
+}
+
+body {
+  font-family: Arial;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  color: var(--text);
+  background: var(--bg);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+button {
+  cursor:pointer;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  padding:5px 8px;
+  border-radius:6px;
+}
+
+.snippet {
+  background: var(--card);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:12px;
+  margin:10px 0;
+}
+
+pre {
+  background: var(--code);
+  padding:8px;
+  border-radius:6px;
+  overflow-x:auto;
+}
+
+.small {
+  font-size:12px;
+  opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <h1>GitTrial</h1>
+  <button onclick="toggleDark()">🌙</button>
+</div>
+
+<!-- BASIC -->
+<div class="snippet">
+<strong>git init</strong>
+<div class="small">start repository</div>
+<pre><code>git init</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git clone</strong>
+<div class="small">download repo</div>
+<pre><code>git clone https://github.com/user/repo.git</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git status</strong>
+<div class="small">check changes</div>
+<pre><code>git status</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git add</strong>
+<div class="small">stage changes</div>
+<pre><code>git add .</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git commit</strong>
+<div class="small">save snapshot</div>
+<pre><code>git commit -m "message"</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git push</strong>
+<div class="small">upload changes</div>
+<pre><code>git push</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git pull</strong>
+<div class="small">download updates</div>
+<pre><code>git pull</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git log</strong>
+<div class="small">history</div>
+<pre><code>git log --oneline</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git diff</strong>
+<div class="small">unstaged changes</div>
+<pre><code>git diff</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git diff --staged</strong>
+<div class="small">staged changes</div>
+<pre><code>git diff --staged</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<!-- BRANCHING -->
+<div class="snippet">
+<strong>git branch</strong>
+<div class="small">list branches</div>
+<pre><code>git branch</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git switch</strong>
+<div class="small">change branch</div>
+<pre><code>git switch main</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git switch -c</strong>
+<div class="small">create branch</div>
+<pre><code>git switch -c feature</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git merge</strong>
+<div class="small">combine branches</div>
+<pre><code>git merge feature</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git branch -d</strong>
+<div class="small">delete branch</div>
+<pre><code>git branch -d feature</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git rebase</strong>
+<div class="small">rewrite history</div>
+<pre><code>git rebase main</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<!-- REMOTE -->
+<div class="snippet">
+<strong>git remote</strong>
+<div class="small">show remote</div>
+<pre><code>git remote -v</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git remote add</strong>
+<div class="small">connect repo</div>
+<pre><code>git remote add origin URL</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git fetch</strong>
+<div class="small">get updates</div>
+<pre><code>git fetch</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git push -u</strong>
+<div class="small">set upstream</div>
+<pre><code>git push -u origin main</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<!-- UNDO -->
+<div class="snippet">
+<strong>git restore</strong>
+<div class="small">undo file changes</div>
+<pre><code>git restore file.txt</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git reset</strong>
+<div class="small">undo commit</div>
+<pre><code>git reset HEAD~1</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git reset hard</strong>
+<div class="small">danger: delete changes</div>
+<pre><code>git reset --hard HEAD~1</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git revert</strong>
+<div class="small">safe undo</div>
+<pre><code>git revert <commit></code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<!-- ADVANCED -->
+<div class="snippet">
+<strong>git stash</strong>
+<div class="small">save work</div>
+<pre><code>git stash</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<div class="snippet">
+<strong>git stash pop</strong>
+<div class="small">restore work</div>
+<pre><code>git stash pop</code></pre>
+<button onclick="copy(this)">Copy</button>
+</div>
+
+<script>
+function copy(btn){
+  navigator.clipboard.writeText(btn.previousElementSibling.innerText);
+  btn.innerText="Copied!";
+  setTimeout(()=>btn.innerText="Copy",1000);
+}
+
+function toggleDark(){
+  document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
